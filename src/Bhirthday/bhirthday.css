@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body{
+    background-color: pink !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.card-bhirthday{
+    margin-top: 50px;
+    width: 500px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.name-people{
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 2px;
+}
+
+.img-people{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    border: 4px
+}
