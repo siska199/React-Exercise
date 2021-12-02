@@ -4,43 +4,25 @@ import React from 'react'
 export default function Pagi(props) {
 
     const pageNumbers = []
-    // if(props.currentPage>5){
-    //     let i = props.currentPage-1
-    //     while(pageNumbers.length<=5){
-    //         i = i+1
-    //         pageNumbers.push(i)
-    //         console.log("I: ", i)
-    //     }
 
-    // }else{
-    //     for(let i=1; i<=props.totalPagination; i++){
-    //         pageNumbers.push(i)
-    //     }
-    // }
+    let i 
+    if(props.currentPage<=5){
+        i = 1
+    }
+    else if((props.currentPage-1)%5==0){
+        i = props.currentPage
+    }else{
+        i = props.currentPage- (props.currentPage)%5 +1
+    }
 
-    // for(let i=1; i<=props.totalPagination; i++){
-    //     pageNumbers.push(i)
-    // }
-        let i
-        if(props.currentPage<=5){
-            i = 1
-        }else if((props.currentPage)%5==1){
-            i = 5*((props.currentPage)/5)
-        }else if((props.currentPage)%5==0){
-            i = 5*((props.currentPage)/5)-4
+    while(pageNumbers.length<5){
+        pageNumbers.push(i)
+        if(i==props.maxPage){
+            break;
         }
-        else if((props.currentPage)%5!=0){
-            i = props.currentPage-((props.currentPage)%5)+1
-        }
+        i = i+1
 
-        while(pageNumbers.length<5){
-            pageNumbers.push(i)
-            if(i==props.maxPage){
-                break;
-            }
-            i = i+1
-
-        }
+    }
     return (
         <nav>
             <ul className="pagination">
